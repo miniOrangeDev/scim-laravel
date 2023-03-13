@@ -1,0 +1,25 @@
+<?php
+
+namespace provider;
+
+use Illuminate\Support\ServiceProvider;
+
+class ScimServiceProvider extends ServiceProvider
+{
+
+	public function boot()
+	{
+		$app     = app();
+		$version = floatval($app->version());
+		if ($version <= 5.3) {
+			if (!$this->app->routesAreCached()) {
+				require __DIR__ . '/../src/routes.php';
+			}
+			$this->loadViewsFrom(__DIR__ . '/../src/', 'mo_scim');
+		} else {
+			$this->loadMigrationsFrom(__DIR__ . '/../src/migrations');
+			$this->loadRoutesFrom(__DIR__ . '/../src/routes.php');
+			$this->loadViewsFrom(__DIR__ . '/../src/', 'mo_scim');
+		}
+	}
+}
