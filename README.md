@@ -1,5 +1,5 @@
-# Laravel SCIM readme
+# Laravel SCIM
 
 ## Visit Page
 
-### your_site.com/mo_scim_admin
+### <your_domain>/mo_scim_admin
