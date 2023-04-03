@@ -1,6 +1,6 @@
 {
   "name": "miniorange/scim-laravel",
-  "description": "Laravel SCIM package",
+  "description": "Laravel SCIM Solution allows you to perform real-time user provisioning/sync from your Identity Provider to Service Provider.",
   "license": "BSD-3-Clause",
   "authors": [
     {
